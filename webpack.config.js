@@ -1,4 +1,5 @@
 const path = require('path')
+const WriteFilePlugin = require('write-file-webpack-plugin')
 
 module.exports = {
   mode: "development",
@@ -7,9 +8,12 @@ module.exports = {
     filename: "index.js",
     path: path.resolve(__dirname, "public/build")
   },
-  watch: false,
+  watch: true,
   devServer: {
     contentBase: path.resolve(__dirname, "public"),
     port: 3000
-  }
+  },
+  plugins: [
+    new WriteFilePlugin()
+  ]
 }
