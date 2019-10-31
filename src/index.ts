@@ -42,7 +42,7 @@ class Dot {
     this.x = x
     this.y = y
     this.z = z
-    this.radius = 0.2
+    this.radius = 0.2 // Default radius should be "10"
 
     this.xProjected = 0
     this.yProjected = 0
@@ -50,7 +50,7 @@ class Dot {
   }
 
   project(): void {
-    this.scaleProjected = (PERSPECTIVE * 50) / (PERSPECTIVE + this.z)
+    this.scaleProjected = (PERSPECTIVE * 50) / (PERSPECTIVE + this.z) // Default Math should be "PERSPECTIVE / (PERSPECTIVE + this.z)"
     this.xProjected = (this.x * this.scaleProjected) + PROJECTION_CENTER_X
     this.yProjected = (this.y * this.scaleProjected) + PROJECTION_CENTER_Y
   }
